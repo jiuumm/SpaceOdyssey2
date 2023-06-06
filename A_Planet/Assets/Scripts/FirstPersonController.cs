@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FirstPersonController : MonoBehaviour
 {
     public float mouseSensitivityX = 250f;
@@ -9,6 +10,7 @@ public class FirstPersonController : MonoBehaviour
     public float walkSpeed = 8f;
     public float jumpForce = 220;
     public LayerMask groundedMask;
+
 
     Transform cameraT;
     float verticalLookRotation;
@@ -21,6 +23,8 @@ public class FirstPersonController : MonoBehaviour
     void Start()
     {
         cameraT = Camera.main.transform;
+       
+      
     }
 
     void Update()
@@ -53,5 +57,9 @@ public class FirstPersonController : MonoBehaviour
     void FixedUpdate() {
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
     }
+
+
+
+
 
 }
